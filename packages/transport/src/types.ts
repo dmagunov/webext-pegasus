@@ -10,6 +10,7 @@ export type RuntimeContext =
   | 'devtools'
   | 'background'
   | 'popup'
+  | 'sidepanel'
   | 'options'
   | 'content-script'
   | 'window';
