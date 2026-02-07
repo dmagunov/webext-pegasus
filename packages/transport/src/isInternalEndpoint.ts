@@ -6,6 +6,7 @@ const internalEndpoints: RuntimeContext[] = [
   'content-script',
   'options',
   'popup',
+  'sidepanel',
 ];
 
 export const isInternalEndpoint = ({context: ctx}: Endpoint): boolean =>
