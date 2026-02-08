@@ -24,5 +24,5 @@ Communication framework for browser extensions, with wings!
 
 ## Supports
 
-* **Runtime contexts:** window (injected script), popup, devtools, content script, background, options, sidepanel (_planned_)
+* **Runtime contexts:** window (injected script), popup, sidepanel, devtools, content script, background, options
 * **Browsers:** Chrome, Firefox, Safari, Opera, Edge + others supported by [webextension-polyfill](https://github.com/mozilla/webextension-polyfill)

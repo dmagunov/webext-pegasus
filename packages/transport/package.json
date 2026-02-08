@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsup-build": "tsup index.ts background.ts content-script.ts devtools.ts popup.ts window.ts options.ts --format cjs,esm --dts",
+    "tsup-build": "tsup index.ts background.ts content-script.ts devtools.ts popup.ts sidepanel.ts window.ts options.ts --format cjs,esm --dts",
     "build": "npm run tsup-build --dts-resolve",
     "prepublishOnly": "npm run build"
   },
@@ -47,6 +47,10 @@
       "import": "./dist/popup.js",
       "require": "./dist/popup.cjs"
     },
+    "./sidepanel": {
+      "import": "./dist/sidepanel.js",
+      "require": "./dist/sidepanel.cjs"
+    },
     "./window": {
       "import": "./dist/window.js",
       "require": "./dist/window.cjs"
@@ -71,6 +75,9 @@
       ],
       "popup": [
         "dist/popup.d.ts"
+      ],
+      "sidepanel": [
+        "dist/sidepanel.d.ts"
       ],
       "window": [
         "dist/window.d.ts"

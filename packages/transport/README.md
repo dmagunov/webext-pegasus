@@ -19,7 +19,7 @@ This library provides two communication patterns:
 
 ## Supports
 
-* **Runtime contexts:** window (injected script), popup, devtools, content script, background, options, sidepanel (_planned_)
+* **Runtime contexts:** window (injected script), popup, sidepanel, devtools, content script, background, options
 * **Browsers:** Chrome, Firefox, Safari, Opera, Edge + others supported by [webextension-polyfill](https://github.com/mozilla/webextension-polyfill)
 
 ## Comparison to other libraries
@@ -88,6 +88,7 @@ eventBus.emitBroadcastEvent(
  - `@webext-pegasus/transport/devtools`
  - `@webext-pegasus/transport/options`
  - `@webext-pegasus/transport/popup`
+ - `@webext-pegasus/transport/sidepanel`
  - `@webext-pegasus/transport/window` (for injected scripts)
 
 
@@ -125,7 +126,7 @@ initPegasusTransport();
 
 ## Security risks while communicating with injected script
 
-The following note only applies if and only if, you will be sending/receiving messages to/from `window` contexts. There's no security concern if you will be only working with `content-script`, `background`, `popup`, `options`, or `devtools` scope, which is the default setting.
+The following note only applies if and only if, you will be sending/receiving messages to/from `window` contexts. There's no security concern if you will be only working with `content-script`, `background`, `popup`, `sidepanel`, `options`, or `devtools` scope, which is the default setting.
 
 `window` context(s) in tab `A` get unlocked the moment you call `initPegasusTransport({allowWindowMessagingForNamespace: 'TEST'})` in your extension's content script AND `initPegasusTransport({namespace: 'TEST'})` in your injected script.
 
@@ -142,7 +143,7 @@ import { onMessage } from '@webext-pegasus/transport/background';
 
 onMessage("getUserBrowsingHistory", (message) => {
   const { data, sender } = message;
-  // Respond only if request is from 'devtools', 'content-script', 'popup', 'options', or 'background' endpoint
+  // Respond only if request is from 'devtools', 'content-script', 'popup', 'sidepanel', 'options', or 'background' endpoint
 });
 ```
 
