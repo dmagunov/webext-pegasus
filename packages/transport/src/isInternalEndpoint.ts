@@ -4,6 +4,7 @@ const internalEndpoints: RuntimeContext[] = [
   'background',
   'devtools',
   'content-script',
+  'newtab',
   'options',
   'popup',
   'sidepanel',

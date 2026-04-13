@@ -5,6 +5,7 @@ export type RuntimeContext =
   | 'background'
   | 'popup'
   | 'sidepanel'
+  | 'newtab'
   | 'options'
   | 'content-script'
   | 'window';

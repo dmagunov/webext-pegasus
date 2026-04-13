@@ -1,7 +1,7 @@
 import type {Endpoint, RuntimeContext} from '../types';
 
 const ENDPOINT_RE =
-  /^((?:background$)|devtools|popup|sidepanel|options|content-script|window)(?:@(\d+)(?:\.(\d+))?)?$/;
+  /^((?:background$)|devtools|popup|sidepanel|newtab|options|content-script|window)(?:@(\d+)(?:\.(\d+))?)?$/;
 
 export const deserializeEndpoint = (endpoint: string): Endpoint => {
   const [, context, tabId, frameId] = endpoint.match(ENDPOINT_RE) || [];

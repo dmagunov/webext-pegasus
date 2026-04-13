@@ -8,6 +8,8 @@ build
 build
 coverage
 dist
+!packages/transport/dist
+!packages/rpc/dist
 npm
 !scripts/npm
 .DS_Store
